@@ -1,5 +1,5 @@
 const express = require('express')
-const { registerController, loginController, updateUserController } = require('../controllers/userController')
+const { registerController, loginController, updateUserController, requireSignIn } = require('../controllers/userController')
 
 const router = express.Router()
 
@@ -10,7 +10,7 @@ router.post('/register', registerController )
 router.post('/login', loginController)
 
 //UPDATE 
-router.put('/update-user', updateUserController)
+router.put('/update-user', requireSignIn, updateUserController)
 
 //exports
 module.exports = router
