@@ -3,16 +3,16 @@ import React, { useContext } from 'react'
 import { AuthContext } from '@/context/authContext'
 import FooterMenu from '../components/Menus/FooterMenu'
 
-const Home = () => {
-    //global state
-    const [state] = useContext(AuthContext)
-  return (
-    <View style={styles.container}>
-      <Text>{JSON.stringify(state, null, 4)}</Text>
-      <FooterMenu />
-    </View>
-  )
-};
+const Post = () => {
+    return (
+        <View style={styles.container}>
+          <View style={{flex:1, justifyContent:"flex-end"}}>
+
+<FooterMenu />
+ </View>
+        </View>
+      )
+}
 
 const styles = StyleSheet.create({
     container:{
@@ -21,5 +21,4 @@ const styles = StyleSheet.create({
         marginTop:40
     }
 })
-
-export default Home
+export default Post
