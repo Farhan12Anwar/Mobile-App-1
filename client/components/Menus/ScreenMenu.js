@@ -6,6 +6,7 @@ import Register from "@/screens/auth/Register";
 import Login from "@/screens/auth/Login";
 import Post from '../../screens/Post'
 import About from '../../screens/About'
+import Myposts from '../../screens/MyPosts'
 import Account from '../../screens/Account'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthContext } from "@/context/authContext";
@@ -32,6 +33,14 @@ const ScreenMenu = () => {
           <Stack.Screen
             name="Post"
             component={Post}
+            options={{ 
+                headerBackTitle:'Black',
+                headerRight:() => <HeaderMenu />
+             }}
+          />
+          <Stack.Screen
+            name="Myposts"
+            component={Myposts}
             options={{ 
                 headerBackTitle:'Black',
                 headerRight:() => <HeaderMenu />

@@ -8,18 +8,21 @@ const PostCard = ({posts}) => {
     <View>
       <Text style={styles.heading}>Total Posts {posts?.length}</Text>
      {
-        posts?.map( (post,i) => (
+        posts?.map((post,i) => (
             <View style={styles.card} key={i}>
                 <Text style={styles.title}>Title : {post?.title}</Text>
                 <Text style={styles.desc}>{post?.description}</Text>
 
                 <View style={styles.footer}>
+              {post?.postedBy?.name && (
                 <Text>
                     {" "}
                 <FontAwsome5 name="user" color={'orange'} />{" "}
                     {post?.postedBy?.name}
                     </Text>
+              )} 
                 <Text>
+                    {" "}
                 <FontAwsome5 name="clock" color={'orange'} />{" "}
                     {moment(post?.createdAt).format('DD:MM:YYYY')}
                     </Text>

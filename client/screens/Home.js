@@ -1,4 +1,4 @@
-import { View, Text,StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React, { useContext } from 'react'
 import { AuthContext } from '@/context/authContext'
 import FooterMenu from '../components/Menus/FooterMenu'
