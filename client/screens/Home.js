@@ -11,6 +11,7 @@ const Home = () => {
     const [posts] = useContext(PostContext)
   return (
     <View style={styles.container}>
+       <Text>{JSON.stringify(posts, null, 4)}</Text>
       <ScrollView>
         <PostCard posts={posts}/>
       </ScrollView>
