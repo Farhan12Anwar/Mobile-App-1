@@ -5,8 +5,11 @@ import FooterMenu from "../components/Menus/FooterMenu";
 import { ScrollView, TextInput } from "react-native-gesture-handler";
 import FontAwsome5 from 'react-native-vector-icons/FontAwesome5'
 import axios from "axios";
+import { PostContext } from "@/context/postContext";
 
 const Post = ({  navigation }) => {
+  //Global State
+  const [posts,setPosts] = useContext(PostContext)
     //local state
     const [title, setTitle] = useState('');
     const [description, setdescription] = useState('');
@@ -24,6 +27,7 @@ const Post = ({  navigation }) => {
             }
             const { data } = await axios.post('/post/create/post',{title,description});
             setLoading(false);
+            setPosts([...posts, data?.post])
             alert(data?.message)
             navigation.navigate('Home')
         } catch (error) {
